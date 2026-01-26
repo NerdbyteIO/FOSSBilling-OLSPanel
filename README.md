@@ -17,3 +17,13 @@ This is a community developed and maintained package.
 ## Custom Package Values (Required)
 - pkg_id
 - php_version
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=NerdbyteIO/FOSSBilling-OLSPanel&type=Date)](https://star-history.com/#NerdbyteIO/FOSSBilling-OLSPanel&Date)
+
+## Donate
+
+If you find this server manager useful and wish to support further development, consider buying me a coffee! Your support is appreciated, but entirely optional.
+
+<a href="https://www.buymeacoffee.com/jsonkenyon" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
