@@ -1,7 +1,7 @@
 # FOSSBilling-OLSPanel Server Module
 This repository is for the OLSPanel server manager for FOSSBilling.
 
-This server manager has been re-written using the RESTful API.  This is a community developed and maintained package.
+This is a community developed and maintained package.
 
 ## Usages
 1. Creates new user + domain
