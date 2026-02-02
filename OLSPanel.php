@@ -93,6 +93,17 @@ class Server_Manager_OLSPanel extends Server_Manager
      */
     public function getLoginUrl(?Server_Account $account = null): string
     {
+        /**nLets check if there is an account, if so
+         * we will go ahead and SSO login
+         * the user.
+         */
+        if ($account) {
+            $response = $this->_request("sso_login", [
+                "username" => $account->getUsername(),
+            ]);
+
+            return $response->url;
+        }
         // We are simply going to force https for now.
         // Perhaps down the rd, we will change this.
         return "https://" .
@@ -344,21 +355,18 @@ class Server_Manager_OLSPanel extends Server_Manager
 
         $result = $response->getContent();
 
-        $this->getLog()->info($result);
+        $data = json_decode($result);
 
-        /**
-         * If there is an error, we need to know about it.
-         */
-        if (($data = json_decode($result, true))["error"] ?? false) {
+        if ($data?->error) {
+            throw new Server_Exception($data->error ?? "Something went wrong.");
+        }
+
+        if ($data?->success === false) {
             throw new Server_Exception(
-                $data["error"] ?? "Something went wrong.",
-            );
-        } elseif (($data = json_decode($result, true))["success"] === false) {
-            throw new Server_Exception(
-                $data["success"] ?? "Something went wrong.",
+                $data->message ?? "Something went wrong.",
             );
         }
 
-        return $result;
+        return $data;
     }
 }
