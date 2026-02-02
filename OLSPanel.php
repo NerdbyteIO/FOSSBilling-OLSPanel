@@ -74,7 +74,13 @@ class Server_Manager_OLSPanel extends Server_Manager
         ) {
             return $this->_config["port"];
         } else {
-            return 5666;
+            /**
+             * Per https://github.com/NerdbyteIO/FOSSBilling-OLSPanel/issues/2
+             * Updating the default port from 5666 to 6844
+             * You can still override this in settings.
+             * If needed. :)
+             */
+            return 6844;
         }
     }
 
