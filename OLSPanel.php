@@ -135,7 +135,9 @@ class Server_Manager_OLSPanel extends Server_Manager
         // We will simply attempt to grab the packages in OLSPanel
         // This will confirm if we have correct creds;
 
-        return $this->_request("packages_list", []);
+        $this->_request("packages_list", []);
+        
+        return true;
     }
 
     /**
@@ -264,7 +266,7 @@ class Server_Manager_OLSPanel extends Server_Manager
     public function changeAccountUsername(
         Server_Account $account,
         string $newUsername,
-    ): exception {
+    ): bool {
         throw new Server_Exception(":type: does not support :action:", [
             ":type:" => "OLSPanel",
             ":action:" => __trans("username changes"),
@@ -282,7 +284,7 @@ class Server_Manager_OLSPanel extends Server_Manager
     public function changeAccountDomain(
         Server_Account $account,
         string $newDomain,
-    ): exception {
+    ): bool {
         throw new Server_Exception(":type: does not support :action:", [
             ":type:" => "OLSPanel",
             ":action:" => __trans("changing the account domain"),
@@ -320,7 +322,7 @@ class Server_Manager_OLSPanel extends Server_Manager
     public function changeAccountIp(
         Server_Account $account,
         string $newIp,
-    ): exception {
+    ): bool {
         throw new Server_Exception(":type: does not support :action:", [
             ":type:" => "OLSPanel",
             ":action:" => __trans("changing the account IP"),
