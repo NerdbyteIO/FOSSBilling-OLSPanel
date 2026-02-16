@@ -1,0 +1,25 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4B0082"/>
+      <stop offset="100%" stop-color="#7B2CBF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="300" rx="20" fill="url(#purpleGradient)"/>
+
+  <text x="50%" y="48%" text-anchor="middle"
+        font-family="Segoe UI, Arial, sans-serif"
+        font-size="60"
+        fill="#ffffff"
+        font-weight="bold">
+    FOSSBilling OLSPanel Server Manager
+  </text>
+
+  <text x="50%" y="68%" text-anchor="middle"
+        font-family="Segoe UI, Arial, sans-serif"
+        font-size="28"
+        fill="#E0D4F7">
+    An Open Source NerdByte Project
+  </text>
+</svg>
